@@ -21,6 +21,7 @@
             height: 100vh;
             color: #555;
             text-align: center;
+            overflow: hidden;
         }
 
         .container {
@@ -31,14 +32,16 @@
             border-radius: 30px;
             border: 6px solid var(--hk-pink);
             box-shadow: 0 10px 0px var(--hk-pink);
+            position: relative;
         }
 
+        /* This keeps them separated */
         .slide { display: none; }
         .active { display: block; animation: fadeIn 0.5s; }
 
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes fadeIn { from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: scale(1); } }
 
-        h1 { color: var(--hk-dark-pink); font-size: 2.2rem; }
+        h1 { color: var(--hk-dark-pink); font-size: 2.2rem; margin: 10px 0; }
         
         button {
             background-color: var(--hk-pink);
@@ -50,37 +53,50 @@
             cursor: pointer;
             margin-top: 20px;
             font-weight: bold;
+            box-shadow: 0 4px 0px var(--hk-dark-pink);
         }
+
+        button:active { transform: translateY(3px); box-shadow: none; }
+
+        .hk-img { width: 80px; margin: 5px; }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <div style="font-size: 40px;">🎀</div>
-
     <div id="s1" class="active">
+        <img src="https://64.media.tumblr.com/tumblr_m399zdYvXG1r2u9pao1_400.gif" class="hk-img" alt="HK">
         <h1>I'm sowwy</h1>
         <p>I have something to tell you...</p>
+        <img src="https://media.tenor.com/y_p0Tsu9S3UAAAAi/hello-kitty-sanrio.gif" style="width: 120px;" alt="HK bow">
+        <br>
         <button onclick="next(2)">please press yes to continue</button>
     </div>
 
     <div id="s2" class="slide">
+        <div style="font-size: 40px;">🎀</div>
         <h1>I'm so sorry!</h1>
         <p>I feel like a total goof for forgetting our monthsary. It’s not that I forgot "us," I just lost track of the day. You deserve to be celebrated every single day.</p>
         <button onclick="next(3)">Click for more...</button>
     </div>
 
     <div id="s3" class="slide">
+        <img src="https://media.tenor.com/S6-vP7C8v_0AAAAi/hello-kitty-love.gif" style="width: 100px;">
         <h1>I Appreciate You!</h1>
         <p>Thank you for being so patient with me and for making my days so much brighter. I'm so lucky to be your person. 💖</p>
-        <div style="font-size: 1.2rem; margin-top: 10px;">I love you!</div>
+        <div style="font-size: 1.5rem; color: var(--hk-dark-pink); margin-top: 10px;">I love you!</div>
     </div>
 </div>
 
 <script>
     function next(num) {
-        document.querySelectorAll('.slide, .active').forEach(s => s.classList.remove('active', 'slide'));
-        document.querySelectorAll('.slide, .active').forEach(s => s.style.display = 'none');
+        // Hide all slides first
+        document.querySelectorAll('.slide, .active').forEach(s => {
+            s.style.display = 'none';
+            s.classList.remove('active');
+        });
+        
+        // Show only the specific slide
         const nextSlide = document.getElementById('s' + num);
         nextSlide.style.display = 'block';
         nextSlide.classList.add('active');
