@@ -51,8 +51,8 @@
         .active { display: block; animation: pop 0.4s ease; }
         @keyframes pop { from { transform: scale(0.9); opacity: 0; } to { transform: scale(1); opacity: 1; } }
 
-        h1 { color: var(--hk-dark-pink); font-size: 1.8rem; line-height: 1.3; }
-        p { font-size: 1.1rem; line-height: 1.4; }
+        h1 { color: var(--hk-dark-pink); font-size: 1.6rem; line-height: 1.3; margin-bottom: 15px; }
+        p { font-size: 1rem; line-height: 1.4; }
 
         button {
             background-color: var(--hk-pink);
@@ -60,7 +60,7 @@
             border: none;
             padding: 12px 25px;
             border-radius: 50px;
-            font-size: 1rem;
+            font-size: 0.9rem;
             cursor: pointer;
             margin-top: 15px;
             font-weight: bold;
@@ -69,13 +69,13 @@
 
         /* Carousel Styles */
         .carousel-container {
-            margin: 20px 0;
+            margin: 15px 0;
             position: relative;
         }
         .photo-frame {
             width: 100%;
             height: 250px;
-            background: #eee;
+            background: #fdf2f5;
             border-radius: 20px;
             overflow: hidden;
             border: 4px solid var(--hk-pink);
@@ -86,22 +86,25 @@
         .photo-frame img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain; /* Shows full image without cropping */
+            background-color: #fff;
         }
         #photo-caption {
-            margin-top: 15px;
+            margin-top: 12px;
             font-style: italic;
             color: #ff85a1;
-            min-height: 50px;
+            min-height: 60px;
+            font-size: 0.95rem;
+            padding: 0 10px;
         }
 
-        .hk-gif { width: 120px; margin-bottom: 10px; }
+        .hk-gif { width: 110px; margin-bottom: 10px; }
     </style>
 </head>
 <body>
 
     <audio id="bgMusic" loop>
-        <source src="https://www.mboxdrive.com/babychair%20-%20Oh%20It's%20You.mp3" type="audio/mpeg">
+        <source src="https://files.catbox.moe/pvhzno.mp3" type="audio/mpeg">
     </audio>
 
     <div class="container">
@@ -128,49 +131,50 @@
         <div id="s4" class="slide">
             <div class="carousel-container">
                 <div class="photo-frame">
-                    <img id="carousel-img" src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHYxcW8zeXpueXF4Znd4Znd4Znd4Znd4Znd4Znd4Znd4Znd4JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1z/v6aOjy0QJD1fOYv9qZ/giphy.gif">
+                    <img id="carousel-img" src="">
                 </div>
-                <p id="photo-caption">Loading our memories...</p>
+                <p id="photo-caption"></p>
                 <button onclick="prevPhoto()">Back</button>
                 <button onclick="nextPhoto()">Next Memory ✨</button>
             </div>
-            <p style="font-size: 0.8rem; color: #888;">Slide through for a surprise</p>
+            <p style="font-size: 0.8rem; color: #888; margin-top: 5px;">I love you to bits! 💖</p>
         </div>
     </div>
 
 <script>
-    // Music Control
     function startApp() {
         const music = document.getElementById('bgMusic');
-        music.play().catch(e => console.log("Audio play blocked, but continuing."));
+        music.play().catch(error => console.log("Audio play blocked."));
         next(2);
     }
 
     function next(num) {
-        document.querySelectorAll('.slide').forEach(s => s.classList.remove('active'));
-        document.querySelectorAll('.slide').forEach(s => s.style.display = 'none');
+        document.querySelectorAll('.slide').forEach(s => {
+            s.classList.remove('active');
+            s.style.display = 'none';
+        });
+        document.getElementById('s1').style.display = 'none'; // Ensure intro hides
         const nextS = document.getElementById('s' + num);
         nextS.style.display = 'block';
         setTimeout(() => nextS.classList.add('active'), 10);
     }
 
-    // Carousel Data
     const memories = [
         {
-            image: "https://via.placeholder.com/400x250?text=Your+Photo+1", // Replace with your link
-            caption: "Remember when we first talked? My heart was racing so fast."
+            image: "https://dylangalecortez-glitch.github.io/Happy-Monthsary-Babi/1.PNG",
+            caption: "Remember when we talked bout how my mom is not a fan of 'tomboys' and you made a joke... who knew ikaw pala yung gf na uuwi ko hehe"
         },
         {
-            image: "https://via.placeholder.com/400x250?text=Your+Photo+2", // Replace with your link
-            caption: "This was one of my favorite days. You looked so beautiful."
+            image: "https://dylangalecortez-glitch.github.io/Happy-Monthsary-Babi/IMG_9694.PNG",
+            caption: "I remember blushing and jumping dahil sa mga pinagsesend mo sakin na reels na who knows what you really meant by it"
         },
         {
-            image: "https://via.placeholder.com/400x250?text=Your+Photo+3", // Replace with your link
-            caption: "I love our late night chats. Distance is nothing compared to us."
+            image: "https://dylangalecortez-glitch.github.io/Happy-Monthsary-Babi/IMG_1570.jpg",
+            caption: "I remember writing my first letter to you over and over because you deserve a cute letter from me"
         },
         {
-            image: "https://via.placeholder.com/400x250?text=Your+Photo+1", // Replace with your link
-            caption: "Remember when we first talked? My heart was racing so fast."
+            image: "https://dylangalecortez-glitch.github.io/Happy-Monthsary-Babi/IMG_0885.PNG",
+            caption: "and then there was this... god babi you had no idea how happy I was when that popped onto my screen:<"
         }
     ];
 
@@ -190,10 +194,8 @@
         updateCarousel();
     }
 
-    // Initialize Caption
     updateCarousel();
 
-    // Floating Decorations script
     setInterval(() => {
         const dec = document.createElement('div');
         dec.classList.add('decoration');
