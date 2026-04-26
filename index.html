@@ -44,7 +44,7 @@
             border: 5px solid var(--hk-pink);
             box-shadow: 0 10px 0px var(--hk-pink);
             position: relative;
-            max-height: 90vh;
+            max-height: 95vh;
             overflow-y: auto;
         }
 
@@ -68,14 +68,13 @@
             box-shadow: 0 4px 0px var(--hk-dark-pink);
         }
 
-        /* FIXED PHOTO SIZE FOR FIRST SLIDE */
+        /* THIS MAKES THE PHOTO SMALLER TO FIT */
         .intro-photo { 
-            max-height: 300px; /* Limits the height of the long photo strip */
+            max-height: 280px; 
             width: auto;
             border-radius: 15px; 
             border: 3px solid var(--hk-pink); 
             margin-bottom: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
 
         .carousel-container { margin: 10px 0; }
@@ -105,7 +104,7 @@
 
     <div class="container">
         <div id="s1" class="active">
-            <img src="Screenshot_20250607-161330_Minecraft.jpg" class="intro-photo" alt="Our Photo Strip">
+            <img src="35D8CD59-8BA1-4872-9DC4-22B3F756EE2F.jpg" class="intro-photo" alt="Us">
             <h1>hey babiii just a little something for you to celebrate our monthsary muhehe</h1>
             <button onclick="startApp()">please press yes to continue</button>
         </div>
@@ -132,7 +131,7 @@
             <h1>To My Favorite Person</h1>
             <div class="love-letter">
                 <p>I love love LOVEEE you so much babi! Looking back, god... I might actually be madly in love with you. I remember how you used to make me feel and how I’d overthink lots of things—you know, the mixed signals? Gosh.</p>
-                <p>I’m really happy you chose me to be with, babi. You make everything so much brighter, and I promise to cherish every second we have together. I won’t let you down because I love you more than words can say. You're my home and my greatest adventure all at once. Happy Monthsary, my baby girl!</p>
+                <p>I’m really happy you chose me to be with, babi. You make everything so much brighter, and I promise to cherish every second we have together. I won’t let you down because I love you more than words can say. You're my home and my greatest adventure all at once. Happy Monthsary, my beautiful girl!</p>
             </div>
             <button onclick="next(5)">One last thing... 🎀</button>
         </div>
@@ -140,7 +139,7 @@
         <div id="s5" class="slide">
             <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHYxcW8zeXpueXF4Znd4Znd4Znd4Znd4Znd4Znd4Znd4Znd4JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1z/3ov9jE49Z5a07t17O0/giphy.gif" style="width: 100px; margin-bottom: 10px;">
             <div class="shoutout">
-                ILOVE YOU SO MUCH BABI KO NAPAKYUT NAPAKAGANDA NAPAKASIPAG RAWRRRRR kiligin ka sana muhehehehe
+                ILOVE YOU SO MUCH BABI KO NAPAKYUT NAPAKAGANDA NAPAKASIPAG RAWRRRRR
             </div>
             <p style="margin-top: 15px; font-size: 0.8rem;">Forever yours! 💖</p>
         </div>
@@ -163,8 +162,8 @@
         setTimeout(() => nextS.classList.add('active'), 10);
     }
 
-    // Exact Filenames from your GitHub Screenshot
     const memories = [
+        { image: "1.PNG", caption: "Remember when we talked bout how my mom is not a fan of 'tomboys'... who knew ikaw pala yung gf na uuwi ko hehe" },
         { image: "IMG_9694.PNG", caption: "I remember blushing and jumping because of the reels you'd send... I'm so glad I'm yours." },
         { image: "IMG_1570.jpg", caption: "Writing that first letter to you... I wanted it to be perfect because you deserve the world." },
         { image: "IMG_0885.PNG", caption: "You have no idea how happy I was when this popped up on my screen. My heart just stopped." },
