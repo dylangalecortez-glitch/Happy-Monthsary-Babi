@@ -81,8 +81,9 @@
         .photo-frame img { width: 100%; height: 100%; object-fit: cover; }
         #photo-caption { margin-top: 12px; font-style: italic; color: #ff85a1; min-height: 60px; font-size: 0.95rem; padding: 0 10px; }
 
-        .intro-photo { width: 120px; height: 120px; object-fit: cover; border-radius: 50%; border: 4px solid var(--hk-pink); margin-bottom: 15px; }
-        .love-letter { background: #fff9fa; padding: 15px; border-radius: 20px; border: 2px dashed var(--hk-pink); margin-top: 10px; text-align: left; }
+        .intro-photo { width: 100%; border-radius: 20px; border: 3px solid var(--hk-pink); margin-bottom: 10px; }
+        .love-letter { background: #fff9fa; padding: 20px; border-radius: 20px; border: 2px dashed var(--hk-pink); text-align: left; margin-bottom: 15px; }
+        .shoutout { font-size: 1.4rem; color: #ff4d6d; font-weight: 800; line-height: 1.2; text-transform: uppercase; }
     </style>
 </head>
 <body>
@@ -93,7 +94,7 @@
 
     <div class="container">
         <div id="s1" class="active">
-            <img src="IMG_9693.PNG" class="intro-photo" alt="Us">
+            <img src="35D8CD59-8BA1-4872-9DC4-22B3F756EE2F.jpg" class="intro-photo" alt="Us">
             <h1>hey babiii just a little something for you to celebrate our monthsary muhehe</h1>
             <button onclick="startApp()">please press yes to continue</button>
         </div>
@@ -105,12 +106,6 @@
         </div>
 
         <div id="s3" class="slide">
-            <h1>Let's go on a trip...</h1>
-            <p>Down memory lane shall we? hehe</p>
-            <button onclick="next(4)">press to continue ❤️</button>
-        </div>
-
-        <div id="s4" class="slide">
             <div class="carousel-container">
                 <div class="photo-frame">
                     <img id="carousel-img" src="">
@@ -119,85 +114,21 @@
                 <button onclick="prevPhoto()">Back</button>
                 <button onclick="nextPhoto()">Next Memory ✨</button>
             </div>
-            <button onclick="next(5)" style="background-color: var(--hk-dark-pink);">Go to my letter 💖</button>
+            <button onclick="next(4)">Read my letter 💖</button>
         </div>
 
-        <div id="s5" class="slide">
+        <div id="s4" class="slide">
             <h1>To My Favorite Person</h1>
             <div class="love-letter">
                 <p>I love love LOVEEE you so much babi! Looking back, god... I might actually be madly in love with you. I remember how you used to make me feel and how I’d overthink lots of things—you know, the mixed signals? Gosh.</p>
                 <p>I’m really happy you chose me to be with, babi. I won’t let you down because I love you, okay? You're the highlight of my every day and I promise to make it up to you for being a goof. Happy Monthsary!</p>
             </div>
-            <p style="font-size: 0.8rem; margin-top: 10px;">Forever yours! 💖</p>
+            <button onclick="next(5)">One last thing... 🎀</button>
         </div>
-    </div>
 
-<script>
-    function startApp() {
-        const music = document.getElementById('bgMusic');
-        // Music only starts when she interacts with the page
-        music.play().catch(error => console.log("Audio play failed"));
-        next(2);
-    }
-
-    function next(num) {
-        document.querySelectorAll('.slide, .active').forEach(s => {
-            s.classList.remove('active');
-            s.style.display = 'none';
-        });
-        const nextS = document.getElementById('s' + num);
-        nextS.style.display = 'block';
-        setTimeout(() => nextS.classList.add('active'), 10);
-    }
-
-    // These filenames match your GitHub upload exactly
-    const memories = [
-        {
-            image: "1.PNG",
-            caption: "Remember when we talked bout how my mom is not a fan of 'tomboys' and you made a joke... who knew ikaw pala yung gf na uuwi ko hehe"
-        },
-        {
-            image: "IMG_9694.PNG",
-            caption: "I remember blushing and jumping dahil sa mga pinagsesend mo sakin na reels na who knows what you really meant by it"
-        },
-        {
-            image: "IMG_1570.jpg",
-            caption: "I remember writing my first letter to you over and over because you deserve a cute letter from me"
-        },
-        {
-            image: "IMG_0885.PNG",
-            caption: "and then there was this... god babi you had no idea how happy I was when that popped onto my screen:<"
-        }
-    ];
-
-    let currentPhoto = 0;
-    function updateCarousel() {
-        document.getElementById('carousel-img').src = memories[currentPhoto].image;
-        document.getElementById('photo-caption').innerText = memories[currentPhoto].caption;
-    }
-
-    function nextPhoto() {
-        currentPhoto = (currentPhoto + 1) % memories.length;
-        updateCarousel();
-    }
-
-    function prevPhoto() {
-        currentPhoto = (currentPhoto - 1 + memories.length) % memories.length;
-        updateCarousel();
-    }
-
-    updateCarousel();
-
-    setInterval(() => {
-        const dec = document.createElement('div');
-        dec.classList.add('decoration');
-        dec.innerHTML = ['🎀', '🌸', '💖', '✨'][Math.floor(Math.random() * 4)];
-        dec.style.left = Math.random() * 100 + 'vw';
-        dec.style.fontSize = (Math.random() * 20 + 20) + 'px';
-        document.body.appendChild(dec);
-        setTimeout(() => dec.remove(), 5000);
-    }, 600);
-</script>
-
-</body>
-</html>
+        <div id="s5" class="slide">
+            <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHYxcW8zeXpueXF4Znd4Znd4Znd4Znd4Znd4Znd4Znd4Znd4JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1z/3ov9jE49Z5a07t17O0/giphy.gif" style="width: 120px; margin-bottom: 20px;">
+            <div class="shoutout">
+                ILOVE YOU SO MUCH BABI KO NAPAKYUT NAPAKAGANDA NAPAKASIPAG RAWRRRRR
+            </div>
+            <p style="margin-top: 20px; font-size: 0.8rem;">Forever yours!
