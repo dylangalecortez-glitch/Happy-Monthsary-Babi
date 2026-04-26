@@ -70,7 +70,7 @@
 
         /* THIS MAKES THE PHOTO SMALLER TO FIT */
         .intro-photo { 
-            max-height: 280px; 
+            max-height: 250px; 
             width: auto;
             border-radius: 15px; 
             border: 3px solid var(--hk-pink); 
@@ -94,6 +94,12 @@
 
         .love-letter { background: #fff9fa; padding: 15px; border-radius: 20px; border: 2px dashed var(--hk-pink); text-align: left; margin-bottom: 10px; }
         .shoutout { font-size: 1.3rem; color: #ff4d6d; font-weight: 800; line-height: 1.2; text-transform: uppercase; }
+        
+        .final-img {
+            max-height: 150px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
     </style>
 </head>
 <body>
@@ -104,7 +110,7 @@
 
     <div class="container">
         <div id="s1" class="active">
-            <img src="35D8CD59-8BA1-4872-9DC4-22B3F756EE2F.jpg" class="intro-photo" alt="Us">
+            <img src="35D8CD59-8BA1-4872-9DC4-22B3F756EE2F.jpg" class="intro-photo">
             <h1>hey babiii just a little something for you to celebrate our monthsary muhehe</h1>
             <button onclick="startApp()">please press yes to continue</button>
         </div>
@@ -131,13 +137,13 @@
             <h1>To My Favorite Person</h1>
             <div class="love-letter">
                 <p>I love love LOVEEE you so much babi! Looking back, god... I might actually be madly in love with you. I remember how you used to make me feel and how I’d overthink lots of things—you know, the mixed signals? Gosh.</p>
-                <p>I’m really happy you chose me to be with, babi. You make everything so much brighter, and I promise to cherish every second we have together. I won’t let you down because I love you more than words can say. You're my home and my greatest adventure all at once. Happy Monthsary, my beautiful girl!</p>
+                <p>I’m really happy you chose me to be with, babi. You are the kindest, most hard-working girl I know, and I promise to cherish every second we have together. You're my home and my greatest adventure all at once. Happy Monthsary, my beautiful girl!</p>
             </div>
             <button onclick="next(5)">One last thing... 🎀</button>
         </div>
 
         <div id="s5" class="slide">
-            <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHYxcW8zeXpueXF4Znd4Znd4Znd4Znd4Znd4Znd4Znd4Znd4JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1z/3ov9jE49Z5a07t17O0/giphy.gif" style="width: 100px; margin-bottom: 10px;">
+            <img src="mwamwa.jpg" class="final-img">
             <div class="shoutout">
                 ILOVE YOU SO MUCH BABI KO NAPAKYUT NAPAKAGANDA NAPAKASIPAG RAWRRRRR
             </div>
@@ -166,8 +172,7 @@
         { image: "1.PNG", caption: "Remember when we talked bout how my mom is not a fan of 'tomboys'... who knew ikaw pala yung gf na uuwi ko hehe" },
         { image: "IMG_9694.PNG", caption: "I remember blushing and jumping because of the reels you'd send... I'm so glad I'm yours." },
         { image: "IMG_1570.jpg", caption: "Writing that first letter to you... I wanted it to be perfect because you deserve the world." },
-        { image: "IMG_0885.PNG", caption: "You have no idea how happy I was when this popped up on my screen. My heart just stopped." },
-        { image: "IMG_1566.jpg", caption: "Every memory with you is my favorite memory. I can't wait to make a thousand more." }
+        { image: "IMG_0885.PNG", caption: "You have no idea how happy I was when this popped up on my screen. My heart just stopped." }
     ];
 
     let currentPhoto = 0;
