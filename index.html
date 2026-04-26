@@ -24,7 +24,6 @@
             overflow: hidden;
         }
 
-        /* Floating Decoration */
         .decoration {
             position: absolute;
             animation: float 5s linear infinite;
@@ -67,11 +66,7 @@
             box-shadow: 0 4px 0px var(--hk-dark-pink);
         }
 
-        /* Carousel Styles */
-        .carousel-container {
-            margin: 15px 0;
-            position: relative;
-        }
+        .carousel-container { margin: 15px 0; position: relative; }
         .photo-frame {
             width: 100%;
             height: 250px;
@@ -83,33 +78,22 @@
             align-items: center;
             justify-content: center;
         }
-        .photo-frame img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain; /* Shows full image without cropping */
-            background-color: #fff;
-        }
-        #photo-caption {
-            margin-top: 12px;
-            font-style: italic;
-            color: #ff85a1;
-            min-height: 60px;
-            font-size: 0.95rem;
-            padding: 0 10px;
-        }
+        .photo-frame img { width: 100%; height: 100%; object-fit: contain; background-color: #fff; }
+        #photo-caption { margin-top: 12px; font-style: italic; color: #ff85a1; min-height: 60px; font-size: 0.95rem; padding: 0 10px; }
 
         .hk-gif { width: 110px; margin-bottom: 10px; }
+        .love-letter { background: #fff9fa; padding: 15px; border-radius: 20px; border: 2px dashed var(--hk-pink); margin-top: 10px; text-align: left; }
     </style>
 </head>
 <body>
 
     <audio id="bgMusic" loop>
-        <source src="https://files.catbox.moe/pvhzno.mp3" type="audio/mpeg">
+        <source src="https://cdn.pixabay.com/audio/2022/05/27/audio_1808f3030c.mp3" type="audio/mpeg">
     </audio>
 
     <div class="container">
         <div id="s1" class="active">
-            <img src="https://media.giphy.com/media/Y8pE7H9N8C83f7QYpP/giphy.gif" class="hk-gif">
+            <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3ZidXNyeXpueXF4Znd4Znd4Znd4Znd4Znd4Znd4Znd4Znd4JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1z/Y8pE7H9N8C83f7QYpP/giphy.gif" class="hk-gif">
             <h1>hey babiii just a little something for you to celebrate our monthsary muhehe</h1>
             <button onclick="startApp()">press to continue 😉</button>
         </div>
@@ -137,23 +121,32 @@
                 <button onclick="prevPhoto()">Back</button>
                 <button onclick="nextPhoto()">Next Memory ✨</button>
             </div>
-            <p style="font-size: 0.8rem; color: #888; margin-top: 5px;">I love you to bits! 💖</p>
+            <button onclick="next(5)" style="background-color: var(--hk-dark-pink);">Last surprise... 💖</button>
+        </div>
+
+        <div id="s5" class="slide">
+            <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHYxcW8zeXpueXF4Znd4Znd4Znd4Znd4Znd4Znd4Znd4Znd4JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1z/3ov9jE49Z5a07t17O0/giphy.gif" class="hk-gif">
+            <h1>To My Favorite Person</h1>
+            <div class="love-letter">
+                <p>I love love LOVEEE you so much babi! Looking back, god... I might actually be madly in love with you. I remember how you used to make me feel and how I’d overthink lots of things—you know, the mixed signals? Gosh.</p>
+                <p>I’m really happy you chose me to be with, babi. I won’t let you down because I love you, okay? You're the highlight of my every day and I promise to make it up to you for being a goof. Happy Monthsary!</p>
+            </div>
+            <p style="font-size: 0.8rem; margin-top: 10px;">Forever yours! 💖</p>
         </div>
     </div>
 
 <script>
     function startApp() {
         const music = document.getElementById('bgMusic');
-        music.play().catch(error => console.log("Audio play blocked."));
+        music.play().catch(error => console.log("Audio blocked."));
         next(2);
     }
 
     function next(num) {
-        document.querySelectorAll('.slide').forEach(s => {
+        document.querySelectorAll('.slide, .active').forEach(s => {
             s.classList.remove('active');
             s.style.display = 'none';
         });
-        document.getElementById('s1').style.display = 'none'; // Ensure intro hides
         const nextS = document.getElementById('s' + num);
         nextS.style.display = 'block';
         setTimeout(() => nextS.classList.add('active'), 10);
