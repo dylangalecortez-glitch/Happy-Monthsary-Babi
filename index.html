@@ -36,40 +36,52 @@
         }
 
         .container {
-            width: 85%;
+            width: 90%;
             max-width: 450px;
             background: white;
-            padding: 30px;
+            padding: 25px;
             border-radius: 40px;
             border: 5px solid var(--hk-pink);
             box-shadow: 0 10px 0px var(--hk-pink);
             position: relative;
+            max-height: 90vh;
+            overflow-y: auto;
         }
 
         .slide { display: none; }
         .active { display: block; animation: pop 0.4s ease; }
         @keyframes pop { from { transform: scale(0.9); opacity: 0; } to { transform: scale(1); opacity: 1; } }
 
-        h1 { color: var(--hk-dark-pink); font-size: 1.6rem; line-height: 1.3; margin-bottom: 15px; }
-        p { font-size: 1rem; line-height: 1.4; }
+        h1 { color: var(--hk-dark-pink); font-size: 1.4rem; line-height: 1.2; margin-bottom: 10px; }
+        p { font-size: 0.95rem; line-height: 1.4; margin: 10px 0; }
 
         button {
             background-color: var(--hk-pink);
             color: white;
             border: none;
-            padding: 12px 25px;
+            padding: 10px 20px;
             border-radius: 50px;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             cursor: pointer;
-            margin-top: 15px;
+            margin-top: 10px;
             font-weight: bold;
             box-shadow: 0 4px 0px var(--hk-dark-pink);
         }
 
-        .carousel-container { margin: 15px 0; position: relative; }
+        /* FIXED PHOTO SIZE FOR FIRST SLIDE */
+        .intro-photo { 
+            max-height: 300px; /* Limits the height of the long photo strip */
+            width: auto;
+            border-radius: 15px; 
+            border: 3px solid var(--hk-pink); 
+            margin-bottom: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .carousel-container { margin: 10px 0; }
         .photo-frame {
             width: 100%;
-            height: 250px;
+            height: 230px;
             background: #fdf2f5;
             border-radius: 20px;
             overflow: hidden;
@@ -78,12 +90,11 @@
             align-items: center;
             justify-content: center;
         }
-        .photo-frame img { width: 100%; height: 100%; object-fit: cover; }
-        #photo-caption { margin-top: 12px; font-style: italic; color: #ff85a1; min-height: 60px; font-size: 0.95rem; padding: 0 10px; }
+        .photo-frame img { width: 100%; height: 100%; object-fit: contain; }
+        #photo-caption { margin-top: 10px; font-style: italic; color: #ff85a1; min-height: 50px; font-size: 0.9rem; padding: 0 10px; }
 
-        .intro-photo { width: 100%; border-radius: 20px; border: 3px solid var(--hk-pink); margin-bottom: 10px; }
-        .love-letter { background: #fff9fa; padding: 20px; border-radius: 20px; border: 2px dashed var(--hk-pink); text-align: left; margin-bottom: 15px; }
-        .shoutout { font-size: 1.4rem; color: #ff4d6d; font-weight: 800; line-height: 1.2; text-transform: uppercase; }
+        .love-letter { background: #fff9fa; padding: 15px; border-radius: 20px; border: 2px dashed var(--hk-pink); text-align: left; margin-bottom: 10px; }
+        .shoutout { font-size: 1.3rem; color: #ff4d6d; font-weight: 800; line-height: 1.2; text-transform: uppercase; }
     </style>
 </head>
 <body>
@@ -94,14 +105,14 @@
 
     <div class="container">
         <div id="s1" class="active">
-            <img src="35D8CD59-8BA1-4872-9DC4-22B3F756EE2F.jpg" class="intro-photo" alt="Us">
+            <img src="Screenshot_20250607-161330_Minecraft.jpg" class="intro-photo" alt="Our Photo Strip">
             <h1>hey babiii just a little something for you to celebrate our monthsary muhehe</h1>
             <button onclick="startApp()">please press yes to continue</button>
         </div>
 
         <div id="s2" class="slide">
             <h1>I'm so sorry!</h1>
-            <p>I feel like a total goof for forgetting our monthsary. It's not that I forgot "us," I just lost track of the day. You deserve to be celebrated every single day.</p>
+            <p>I feel like a total goof for forgetting our monthsary. It's not that I forgot "us," I just lost track of the day. You deserve to be celebrated every single day, not just once a month.</p>
             <button onclick="next(3)">Click for more...</button>
         </div>
 
@@ -121,14 +132,73 @@
             <h1>To My Favorite Person</h1>
             <div class="love-letter">
                 <p>I love love LOVEEE you so much babi! Looking back, god... I might actually be madly in love with you. I remember how you used to make me feel and how I’d overthink lots of things—you know, the mixed signals? Gosh.</p>
-                <p>I’m really happy you chose me to be with, babi. I won’t let you down because I love you, okay? You're the highlight of my every day and I promise to make it up to you for being a goof. Happy Monthsary!</p>
+                <p>I’m really happy you chose me to be with, babi. You make everything so much brighter, and I promise to cherish every second we have together. I won’t let you down because I love you more than words can say. You're my home and my greatest adventure all at once. Happy Monthsary, my baby girl!</p>
             </div>
             <button onclick="next(5)">One last thing... 🎀</button>
         </div>
 
         <div id="s5" class="slide">
-            <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHYxcW8zeXpueXF4Znd4Znd4Znd4Znd4Znd4Znd4Znd4Znd4JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1z/3ov9jE49Z5a07t17O0/giphy.gif" style="width: 120px; margin-bottom: 20px;">
+            <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHYxcW8zeXpueXF4Znd4Znd4Znd4Znd4Znd4Znd4Znd4Znd4JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1z/3ov9jE49Z5a07t17O0/giphy.gif" style="width: 100px; margin-bottom: 10px;">
             <div class="shoutout">
-                ILOVE YOU SO MUCH BABI KO NAPAKYUT NAPAKAGANDA NAPAKASIPAG RAWRRRRR
+                ILOVE YOU SO MUCH BABI KO NAPAKYUT NAPAKAGANDA NAPAKASIPAG RAWRRRRR kiligin ka sana muhehehehe
             </div>
-            <p style="margin-top: 20px; font-size: 0.8rem;">Forever yours!
+            <p style="margin-top: 15px; font-size: 0.8rem;">Forever yours! 💖</p>
+        </div>
+    </div>
+
+<script>
+    function startApp() {
+        const music = document.getElementById('bgMusic');
+        music.play().catch(error => console.log("Audio play failed"));
+        next(2);
+    }
+
+    function next(num) {
+        document.querySelectorAll('.slide, .active').forEach(s => {
+            s.classList.remove('active');
+            s.style.display = 'none';
+        });
+        const nextS = document.getElementById('s' + num);
+        nextS.style.display = 'block';
+        setTimeout(() => nextS.classList.add('active'), 10);
+    }
+
+    // Exact Filenames from your GitHub Screenshot
+    const memories = [
+        { image: "IMG_9694.PNG", caption: "I remember blushing and jumping because of the reels you'd send... I'm so glad I'm yours." },
+        { image: "IMG_1570.jpg", caption: "Writing that first letter to you... I wanted it to be perfect because you deserve the world." },
+        { image: "IMG_0885.PNG", caption: "You have no idea how happy I was when this popped up on my screen. My heart just stopped." },
+        { image: "IMG_1566.jpg", caption: "Every memory with you is my favorite memory. I can't wait to make a thousand more." }
+    ];
+
+    let currentPhoto = 0;
+    function updateCarousel() {
+        document.getElementById('carousel-img').src = memories[currentPhoto].image;
+        document.getElementById('photo-caption').innerText = memories[currentPhoto].caption;
+    }
+
+    function nextPhoto() {
+        currentPhoto = (currentPhoto + 1) % memories.length;
+        updateCarousel();
+    }
+
+    function prevPhoto() {
+        currentPhoto = (currentPhoto - 1 + memories.length) % memories.length;
+        updateCarousel();
+    }
+
+    updateCarousel();
+
+    setInterval(() => {
+        const dec = document.createElement('div');
+        dec.classList.add('decoration');
+        dec.innerHTML = ['🎀', '🌸', '💖', '✨'][Math.floor(Math.random() * 4)];
+        dec.style.left = Math.random() * 100 + 'vw';
+        dec.style.fontSize = (Math.random() * 20 + 20) + 'px';
+        document.body.appendChild(dec);
+        setTimeout(() => dec.remove(), 5000);
+    }, 600);
+</script>
+
+</body>
+</html>
