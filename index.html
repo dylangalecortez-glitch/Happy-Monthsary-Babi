@@ -78,35 +78,33 @@
             align-items: center;
             justify-content: center;
         }
-        .photo-frame img { width: 100%; height: 100%; object-fit: contain; background-color: #fff; }
+        .photo-frame img { width: 100%; height: 100%; object-fit: cover; background-color: #fff; }
         #photo-caption { margin-top: 12px; font-style: italic; color: #ff85a1; min-height: 60px; font-size: 0.95rem; padding: 0 10px; }
 
-        .hk-gif { width: 110px; margin-bottom: 10px; }
+        .intro-photo { width: 100%; border-radius: 20px; border: 3px solid var(--hk-pink); margin-bottom: 10px; }
         .love-letter { background: #fff9fa; padding: 15px; border-radius: 20px; border: 2px dashed var(--hk-pink); margin-top: 10px; text-align: left; }
     </style>
 </head>
 <body>
 
     <audio id="bgMusic" loop>
-        <source src="https://cdn.pixabay.com/audio/2022/05/27/audio_1808f3030c.mp3" type="audio/mpeg">
+        <source src="https://dylangalecortez-glitch.github.io/YOUR-REPO-NAME/Oh%20It's%20You%20-%20babychair%20(Lyrics%20Video).mp3" type="audio/mpeg">
     </audio>
 
     <div class="container">
         <div id="s1" class="active">
-            <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3ZidXNyeXpueXF4Znd4Znd4Znd4Znd4Znd4Znd4Znd4Znd4JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1z/Y8pE7H9N8C83f7QYpP/giphy.gif" class="hk-gif">
+            <img src="https://dylangalecortez-glitch.github.io/YOUR-REPO-NAME/35D8CD59-8BA1-4872-9DC4-22B3F756EE2F.jpg" class="intro-photo" alt="Us">
             <h1>hey babiii just a little something for you to celebrate our monthsary muhehe</h1>
-            <button onclick="startApp()">press to continue 😉</button>
+            <button onclick="startApp()">please press yes to continue</button>
         </div>
 
         <div id="s2" class="slide">
-            <img src="https://media.giphy.com/media/30p9nEIkR4G19VvUvW/giphy.gif" class="hk-gif">
-            <h1>I'm so sorry...</h1>
-            <p>I'm sorry for forgetting our monthsary my love. Not that you don't matter to me anymore, it was my fault I let it pass my mind 🥺</p>
-            <button onclick="next(3)">press to continue ☹️</button>
+            <h1>I'm so sorry!</h1>
+            <p>I feel like a total goof for forgetting our monthsary. It's not that I forgot "us," I just lost track of the day. You deserve to be celebrated every single day.</p>
+            <button onclick="next(3)">Click for more...</button>
         </div>
 
         <div id="s3" class="slide">
-            <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHYxcW8zeXpueXF4Znd4Znd4Znd4Znd4Znd4Znd4Znd4Znd4JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1z/S6-vP7C8v_0AAAAi/giphy.gif" class="hk-gif">
             <h1>Let's go on a trip...</h1>
             <p>Down memory lane shall we? hehe</p>
             <button onclick="next(4)">press to continue ❤️</button>
@@ -121,11 +119,10 @@
                 <button onclick="prevPhoto()">Back</button>
                 <button onclick="nextPhoto()">Next Memory ✨</button>
             </div>
-            <button onclick="next(5)" style="background-color: var(--hk-dark-pink);">Last surprise... 💖</button>
+            <button onclick="next(5)" style="background-color: var(--hk-dark-pink);">Go to my letter 💖</button>
         </div>
 
         <div id="s5" class="slide">
-            <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHYxcW8zeXpueXF4Znd4Znd4Znd4Znd4Znd4Znd4Znd4Znd4JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1z/3ov9jE49Z5a07t17O0/giphy.gif" class="hk-gif">
             <h1>To My Favorite Person</h1>
             <div class="love-letter">
                 <p>I love love LOVEEE you so much babi! Looking back, god... I might actually be madly in love with you. I remember how you used to make me feel and how I’d overthink lots of things—you know, the mixed signals? Gosh.</p>
@@ -138,7 +135,7 @@
 <script>
     function startApp() {
         const music = document.getElementById('bgMusic');
-        music.play().catch(error => console.log("Audio blocked."));
+        music.play().catch(error => console.log("Audio blocked. Ensure filename is exact."));
         next(2);
     }
 
@@ -152,21 +149,22 @@
         setTimeout(() => nextS.classList.add('active'), 10);
     }
 
+    // Exact filenames from your GitHub upload
     const memories = [
         {
-            image: "https://dylangalecortez-glitch.github.io/Happy-Monthsary-Babi/1.PNG",
+            image: "https://dylangalecortez-glitch.github.io/YOUR-REPO-NAME/1.PNG",
             caption: "Remember when we talked bout how my mom is not a fan of 'tomboys' and you made a joke... who knew ikaw pala yung gf na uuwi ko hehe"
         },
         {
-            image: "https://dylangalecortez-glitch.github.io/Happy-Monthsary-Babi/IMG_9694.PNG",
+            image: "https://dylangalecortez-glitch.github.io/YOUR-REPO-NAME/IMG_9694.PNG",
             caption: "I remember blushing and jumping dahil sa mga pinagsesend mo sakin na reels na who knows what you really meant by it"
         },
         {
-            image: "https://dylangalecortez-glitch.github.io/Happy-Monthsary-Babi/IMG_1570.jpg",
+            image: "https://dylangalecortez-glitch.github.io/YOUR-REPO-NAME/IMG_1570.jpg",
             caption: "I remember writing my first letter to you over and over because you deserve a cute letter from me"
         },
         {
-            image: "https://dylangalecortez-glitch.github.io/Happy-Monthsary-Babi/IMG_0885.PNG",
+            image: "https://dylangalecortez-glitch.github.io/YOUR-REPO-NAME/IMG_0885.PNG",
             caption: "and then there was this... god babi you had no idea how happy I was when that popped onto my screen:<"
         }
     ];
